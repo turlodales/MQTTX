@@ -1,6 +1,7 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 module.exports = {
+  productionSourceMap: false,
   devServer: {
     hot: true,
     host: '0.0.0.0',
@@ -70,7 +71,20 @@ module.exports = {
         },
         mac: {
           icon: './public/icons/mac/Icon.icns',
-          target: ['pkg', 'dmg', 'zip'],
+          target: [
+            {
+              target: 'dmg',
+              arch: 'universal',
+            },
+            {
+              target: 'pkg',
+              arch: 'universal',
+            },
+            {
+              target: 'zip',
+              arch: 'universal',
+            },
+          ],
         },
         linux: {
           icon: './public/icons/app.png',

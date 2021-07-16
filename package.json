@@ -1,13 +1,13 @@
 {
   "name": "MQTTX",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "MQTT desktop client",
   "author": "EMQ X Team <yusf@emqx.io>",
   "scripts": {
     "version": "yarn run gen:version && git add -A .",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "gen:version": "node gen-version",
+    "gen:version": "node ./scripts/gen-version.js",
     "electron:build": "yarn run gen:version && vue-cli-service electron:build --win --linux --mac",
     "electron:build-win": "yarn run gen:version && vue-cli-service electron:build --win",
     "electron:build-linux": "yarn run gen:version && vue-cli-service electron:build --linux",
@@ -76,9 +76,9 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.4.2",
     "monaco-editor-webpack-plugin": "^4.0.0",
-    "node-sass": "^4.13.1",
     "prettier": "^2.0.5",
-    "sass-loader": "^7.3.1",
+    "sass": "~1.32.13",
+    "sass-loader": "^8.0.2",
     "typescript": "^3.7.4",
     "vue-cli-plugin-electron-builder": "^2.0.0",
     "vue-template-compiler": "^2.6.12"
